@@ -1,0 +1,181 @@
+Descarga: https://git-scm.com/
+
+CONFIGURACION INICIAL
+
+- ssh-keygen -t rsa -b 4096 -C "email" //Genera Key SSH
+- cat ~/.ssh/id_rsa.pub // Nos muestra la key para Copy/Paste en la pagina de GitHub (Settings -> SSH an GPGKey -> SSHKeys -> New SSHkey -> title:fsociety -> key)
+- SSH -T git@github.com //  La llave pasa de de negro a verde ;)
+
+
+
+**------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
+
+COMANDOS PRINCIPALES
+
+* git init //Oime Git, voy a usar estos documentos contigo ¿dale?
+* git add <file> //Pasa los docs a staging area 
+* git add . //Pasa todos los archivos
+* git commit //Pasa los docs de staging area a repository (Después de esto se te va a abrir el editor de código VIN en donde tendrás que escribir un comentario, si te quieres evitar abrir VIN entonces utiliza los siguientes comandos:)
+* git commit -m "comentario" //Lo mismo que el commit regular, pero ahora no necesitas entrar a VIN
+* git status //Ver en que status (wd, sa, r) están los docs
+* git push //Subir los docs a un server (Github)
+* git pull  //Traer los docs de un server, traer los cambios de tus compañeros
+* git clone //Hacerte una copia de lo que está en el server a tu PC
+* git checkout -- <file> //Para revertir los cambios de los archivos
+* git diff <file> //Para ver las diferencias hechas en los archivos
+* git branch //Ver las ramas que hay ("master" es la rama default)
+* git branch "nombre" //Crear una nueva rama
+* git checkout "nombre" //Ir a una rama en especifico 
+
+*  git config -- global user.email "email" Para configurar email del usuario
+*  git config -- global user.name "nombre" Para configurar nombre del usuario
+
+
+SABIDURIAS:
+
+a) vin Es el editor de código de git desde la consola, ahí escribes un comentario para la nueva versión que estés versionando (si no te deja escribir presiona a letra i). Cuando termines presiona esc y luego :wq (write & quit)pasa salir.
+
+b) .gitignore Es un archivo reservado de git que tenemos que crear si queremos decirle a git los archivos que no vamos a utilizar y así decida ignorarlos.
+Escribe dentro de el archivo .gitignore los nombres de los archivos que desees ignorar.
+Nota: Las carpetas se escriben solas y los archivos con su terminación.
+
+**------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
+
+* Importantes
+- No importantes
+
+
+1) Primer Repositorio y Commit.
+
+    a) Este paso se realiza por unica vez en cada pc en la que se quiera utilizar
+        *  git config --global user.email "email"      //Para configurar email del usuario
+        *  git config --global user.name "nombre"      //Para configurar nombre del usuario
+        -  git config --global -l       //Para saber que usuario estas usando
+
+
+    b)Inicializar Repositorio
+        *   git init
+        *   git status      //Para saber el estado de los archivos
+        *   git add .       //Tener control de los archivos
+        *   git commit -m "Comentario"      //Confirma los archivos
+        -   git diff        //Ver diferencias si cambiaste un archivo
+        -   git checkout .      //Regresa al ultimo commit
+        -   git log         //muestra toda la lista de commits 4
+
+
+2) Stage y Logs
+
+    a) Para modificar solamente un archivo
+        *   git add <nombre_de_archivo>
+        *   git commit -m "Se modifico <nombre_de_archivo>"      //Confirma los archivos
+        -   git add css/*.css       //Agrega todos los archivos con la extencion especificada
+        -   git reset <nombre_de_archivo>       //Sacar del estado stage un archivo
+        -   git add -A          //Agrega todos los archivos en Stage
+        -   git add --all       //Agrega todos los archivos en Stage
+        -   git help <nombre_de_comando>        //Te da explicacion de los comandos
+
+
+3) Alias
+
+    a) Cambiar nombres de comandos ejemplo "satatus" x "s"
+        -   git config --global alias.l "log"
+
+
+4) MV/RM/Reset
+
+    a) Modificar comentario de commit mal escrito
+        -   git commit --amend -m "Nueva modificacion"
+    
+    b) Cambiar nombre de archivo commiteado
+        -   git mv archivo.html archi.html
+        -   git commit -m "Se cambio de nombre archivo.html a archi.html"
+    
+    c) Remover archivo
+        -   git rm arhi.html
+        -   git commit -m "Se borro archi.html"
+    
+    d) Recuperar archivo borrado
+        -   git reset --soft c4b6999ca349b0d08a3e5d414f8ab5ba716f36c4       // No recupera elemento, simplemente se posiciona en un commit
+        -   git reset --hard c4b6999ca349b0d08a3e5d414f8ab5ba716f36c4       // Una vez parados en un commit, podemos recuperar el arhivo con este comando
+        -   git reflog      //Muestra todas las acciones tomadas
+        -   git reset --mixed c4b6999ca349b0d08a3e5d414f8ab5ba716f36c4      //Vuelve a un commit anterior y borra todos los que fueron posteriores pero no modifica los archivos
+
+
+5) Gitignored
+
+        a) Ignorar archivos
+            - Crear el archivo .gitignore       // Es un archivo reservado de git que tenemos que crear si queremos decirle a git los archivos que no vamos a utilizar y así decida ignorarlos.
+                                                   Escribe dentro de el archivo .gitignore los nombres de los archivos que desees ignorar.
+                                                   Nota: Las carpetas se escriben solas y los archivos con su terminación.
+                                                   Capetas(/Folder/)
+
+
+6) Ramas y Uniones (Merge). Esto sirve siempre y cuando no interfiera el contenido de la rama con el master (FastFoward)
+
+    a) Crear nueva rama
+        *   git branch nueva_rama       //Crea nueva rama
+        -   git log --oneline --decorate --all --graph      //Muestra historial de todas las acciones realizadas
+        *   git cheackout nueva_rama        //Cambiar de rama
+
+    b)Unir dos ramas (Merge)
+        *   Posicionarse en rama master
+        *   git merge nueva_merge
+        *   git branch -d nueva_rama        //Elimina la rama inidicada
+        -   git checkout -b nueva_rama2     //Crea una rama y te dirije automaticamente
+
+
+7) Merge (solucionar errores). 
+
+    a) Si se modifica el codigo dentro de un archivo de la nueva rama  cuando se realize un merge con la rama master escribira codigo que no corresponde, se debe borrar lo que esta demas
+        y se solucionara el problema.
+
+
+8) Etiquetas (tags)
+
+    a) Etiquetar versiones de un software
+        *   git tag version_de_prueba  
+        *   git tag -d version_de_prueba        //Elimina la etiqueta
+        -   git tag -a v1.0.0
+        -   git tag -a v1.0.0 -m "Version incial"       //Versiones
+
+
+9) Git Clone
+
+    a) Subir a repositorio
+        - git remote rm origin  
+        - git remote rm upstream
+        * git remote add origin https://github.com/matiasercolani/GitHub-Comandos.git
+        * git push -u origin master
+
+
+    b) Clonar un repositorio desde GitHub
+        * git clone https://github.com/matiasercolani/GitHub-Comandos.git
+        - git push origin master
+
+10) Git pull
+
+    a) Si se crea un archivo desde github con estos comandos se pueden actualizar y agregarse en el repo local 
+        - git pull      //descarga 
+
+
+11) Forks
+
+    a) En la pagina de github entrar al repo que se quiere copiar y Presionar boton "FORK" y se creara una copia en mi pagina de github
+        * git clone https://github.com/matiasercolani/GitHub-Comandos.git        //para tener una copia local
+
+
+12) Pull request
+
+    a) Sirve para colaborar con otras cuentas y hacer modificaciones/comentarios para que lo modifique el otro usuario
+
+
+13) Subida de arhivos
+
+    - git remote rm origin
+    - git remote rm upstream
+    - git remote add origin https://github.com/matiasercolani/GitHub-Comandos.git
+    - git push -u origin master
+
+
+
+By ERCO INDUSTRIES
