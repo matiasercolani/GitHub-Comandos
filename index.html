@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git-Hub Comandos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+
+            <div class="accordion-item" id="question1">
+                <a class="accordion-link" href="#question1">
+                    CONFIGURACION INICIAL
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    <ul class="lista">
+                        <li class="punto">ssh-keygen -t rsa -b 4096 -C "email"   <span class="comentario">Genera Key SSH </span></li>
+                        <li class="punto">cat ~/.ssh/id_rsa.pub  <span class="comentario">Nos muestra la key para Copy/Paste en la pagina de GitHub (Settings -> SSH an GPGKey -> SSHKeys -> New SSHkey -> title:fsociety -> key)</span></li>
+                        <li class="punto">SSH -T git@github.com    <span class="comentario">La llave pasa de de negro a verde ;)</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="accordion-item" id="question2">
+                <a class="accordion-link" href="#question2">
+                    COMANDOS PRINCIPALES                    
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        <li class="punto"> git init  <span class="comentario">  Oime Git, voy a usar estos documentos vos ¿dale?</span></li>
+                        <li class="punto"> git add <file>            <span class="comentario"> Pasa los docs a staging area </span></li>
+                        <li class="punto"> git add . <span class="comentario">  Pasa todos los archivos</span></li>
+                        <li class="punto"> git commit <span class="comentario">  Pasa los docs de staging area a repository (Después de esto se te va a abrir el 
+                            editor de código VIN en donde tendrás que escribir un comentario, si te quieres evitar abrir VIN entonces utiliza los siguientes comandos:)</span></li>
+                        <li class="punto"> git commit -m "comentario" <span class="comentario"> Lo mismo que el commit regular, pero ahora no necesitas entrar a VIN</span></li>
+                        <li class="punto"> git status <span class="comentario"> Ver en que status (wd, sa, r) están los docs</span></li>
+                        <li class="punto"> git push <span class="comentario"> Subir los docs a un server (Github)</span></li>
+                        <li class="punto"> git pull  <span class="comentario"> Traer los docs de un server, traer los cambios de tus compañeros</span></li>
+                        <li class="punto"> git clone <span class="comentario"> Hacerte una copia de lo que está en el server a tu PC</span></li>
+                        <li class="punto"> git checkout -- <file> <span class="comentario"> Para revertir los cambios de los archivos</span></li>
+                        <li class="punto"> git diff <file> <span class="comentario"> Para ver las diferencias hechas en los archivos</span></li>
+                        <li class="punto"> git branch <span class="comentario"> Ver las ramas que hay ("master" es la rama default)</span></li>
+                        <li class="punto"> git branch "nombre" <span class="comentario"> Crear una nueva rama</span></li>
+                        <li class="punto"> git checkout "nombre" <span class="comentario"> Ir a una rama en especifico </span></li><br><br>
+                        
+                        <li class="punto">  git config -- global user.email "email" <span class="comentario">Para configurar email del usuario</span></li>
+                        <li class="punto">  git config -- global user.name "nombre" <span class="comentario">Para configurar nombre del usuario</span></li>
+                    </ul>
+                   
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question3">
+                <a class="accordion-link" href="#question3">
+                    Primer Repositorio y Commit
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        a) Este paso se realiza por unica vez en cada pc en la que se quiera utilizar<br><br>
+                        
+                            <li class="punto">git config --global user.email "email"<span class="comentario">  Configurar email del usuario</span></li>
+                            <li class="punto">git config --global user.name "nombre"<span class="comentario">  Configurar nombre del usuario</span></li>
+                            <li class="punto">git config --global -l<span class="comentario">  Para saber que usuario estas usando</span></li>
+                       
+                    
+                        <br><br>
+                        b) Inicializar Repositorio
+                            <li class="punto">   git init</li>
+                            <li class="punto">  git status      <span class="comentario"> Para saber el estado de los archivos</span></li>
+                            <li class="punto">  git add .       <span class="comentario"> Tener control de los archivos</span></li>
+                            <li class="punto">  git commit -m "Comentario"      <span class="comentario"> Confirma los archivos</span></li>
+                            <li class="punto">  git diff        <span class="comentario"> Ver diferencias si cambiaste un archivo</span></li>
+                            <li class="punto">  git checkout .      <span class="comentario"> Regresa al ultimo commit</span></li>
+                            <li class="punto">  git log        <span class="comentario"> muestra toda la lista de commits 4</span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question4">
+                <a class="accordion-link" href="#question4">
+                    Stage y Logs
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        a) Para modificar solamente un archivo
+                        <br><br>
+                        
+                            <li class="punto">git add < nombre_de_archivo ><span class="comentario">  </span></li>
+                            <li class="punto">git commit -m "Se modifico < nombre_de_archivo >"<span class="comentario"> Confirma los archivos </span></li>
+                            <li class="punto">git add css/*.css<span class="comentario">Agrega todos los archivos con la extencion especificada </span></li>
+                            <li class="punto">git reset < nombre_de_archivo ><span class="comentario">Sacar del estado stage un archivo  </span></li>
+                            <li class="punto">git add -A<span class="comentario">Agrega todos los archivos en Stage </span></li>
+                            <li class="punto">git add --all<span class="comentario">Agrega todos los archivos en Stage</span></li>
+                            <li class="punto">git help < nombre_de_comando ><span class="comentario">Te da explicacion de los comandos</span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question5">
+                <a class="accordion-link" href="#question5">
+                    Alias
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                         a) Cambiar nombres de comandos ejemplo "satatus" x "s"
+                        <br><br>
+                        
+                        <li class="punto">git config --global alias.l "log"</li>
+                        <li class="punto"><span class="comentario">  </span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Ion icons -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
