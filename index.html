@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <a href="#cielo" class="btn-cielo"><ion-icon name="chevron-up-circle-outline"></ion-icon></a>
     <nav>
         <input id="nav-toggle" type="checkbox">
-        <div class="logo"><img class="gatito" src="img/gitironman.png">Git<strong>Hub</strong></div>
+        <div class="logo"><img class="gatito" src="img/gitironman.png" id="cielo">Git<strong>Hub</strong></div>
         <ul class="links">
             <li><a href="https://github.com/matiasercolani"><ion-icon name="logo-github"></ion-icon> Mi GitHub</a></li>
             <li><a href="https://matiasercolani.github.io/"> <ion-icon name="chatbubbles-outline"></ion-icon> Contacto</a></li>
@@ -158,6 +160,270 @@
                 </div>
             </div>
 
+
+
+
+            
+            <div class="accordion-item" id="question6">
+                <a class="accordion-link" href="#question6">
+                    MV / RM / Reset
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        a) Modificar comentario de commit mal escrito
+                        <br><br>
+                        <li class="punto">git commit --amend -m "Nueva modificacion"</li>
+                        <br><br>
+                        b) Cambiar nombre de archivo commiteado
+                        <br><br>
+                        <li class="punto">git mv archivo.html archi.html</li>
+                        <li class="punto">git commit -m "Se cambio de nombre archivo.html a archi.html"</li>
+                        <br><br>
+                        c) Remover archivo
+                        <br><br>
+                        <li class="punto">git rm arhi.html</li>
+                        <li class="punto">git commit -m "Se borro archi.html"</li>
+                        <br><br>
+                        d) Recuperar archivo borrado
+                        <br><br>
+                        <li class="punto">git reset --soft c4b6999ca349b0d08a3e5d414f8ab5ba716f36c4<span class="comentario">No recupera elemento, simplemente se posiciona en un commit
+                        </span></li>
+                        <li class="punto">git reset --hard c4b6999ca349b0d08a3e5d414f8ab5ba716f36c4<span class="comentario">Una vez parados en un commit, podemos recuperar el arhivo con este comando  </span></li>
+                        <li class="punto">git reflog <span class="comentario">Muestra todas las acciones tomadas  </span></li>
+                        <li class="punto">git reset --mixed c4b6999ca349b0d08a3e5d414f8ab5ba716f36c4<span class="comentario">Vuelve a un commit anterior y borra todos los que fueron posteriores pero no modifica los archivos </span></li>
+                        
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question7">
+                <a class="accordion-link" href="#question7">
+                    Gitignored
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        a) Ignorar archivos
+                        <br><br>
+                        <li class="punto">Crear el archivo .gitignore<span class="comentario">Es un archivo reservado de git que tenemos que crear si queremos decirle a git los archivos que no vamos a utilizar y así decida ignorarlos.
+                            Escribe dentro de el archivo .gitignore los nombres de los archivos que desees ignorar.
+                            Nota: Las carpetas se escriben solas y los archivos con su terminación.
+                            Capetas(/Folder/)  </span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+
+
+            <div class="accordion-item" id="question8">
+                <a class="accordion-link" href="#question8">
+                    Ramas y Uniones (Merge)
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        Esto sirve siempre y cuando no interfiera el contenido de la rama con el master (FastFoward)
+                        <br><br>
+                        a) Crear nueva rama
+                        <br><br>
+                        <li class="punto">git branch nueva_rama<span class="comentario">Crea nueva rama  </span></li>
+                        <li class="punto">git log --oneline --decorate --all --graph <span class="comentario"> Muestra historial de todas las acciones realizadas </span></li>
+                        <li class="punto">git cheackout nueva_rama  <span class="comentario"> Cambiar de rama </span></li>
+                            <br><br>
+                        b) Unir dos ramas (Merge)
+                        <br><br>
+                        <li class="punto">Posicionarse en rama master</li>
+                        <li class="punto">git merge nueva_merge</li>
+                        <li class="punto">git branch -d nueva_rama<span class="comentario">Elimina la rama inidicada</span></li>
+                        <li class="punto">git checkout -b nueva_rama2 <span class="comentario">Crea una rama y te dirije automaticamente</span></li>
+                        </ul>
+                </div>
+            </div>
+
+
+
+
+            <div class="accordion-item" id="question9">
+                <a class="accordion-link" href="#question9">
+                    Merge (solucionar errores). 
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                            a) Si se modifica el codigo dentro de un archivo de la nueva rama  cuando se realize un merge con la rama master escribira codigo que no corresponde, se debe borrar lo que esta demas
+                            y se solucionara el problema.
+                        <br><br>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+            <div class="accordion-item" id="question10">
+                <a class="accordion-link" href="#question10">
+                    Etiquetas (tags)
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        
+                            a) Etiquetar versiones de un software
+                            *   git tag version_de_prueba  
+                            *   git tag -d version_de_prueba        //Elimina la etiqueta
+                            -   git tag -a v1.0.0
+                            -   git tag -a v1.0.0 -m "Version incial"       //Versiones
+                        <br><br>
+                        <li class="punto">git tag version_de_prueba </li>
+                        <li class="punto">git tag -d version_de_prueba <span class="comentario">Elimina la etiqueta  </span></li>
+                        <li class="punto">git tag -a v1.0.0</li>
+                        <li class="punto">git tag -a v1.0.0 -m "Version incial" <span class="comentario"> Versiones </span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            
+            <div class="accordion-item" id="question11">
+                <a class="accordion-link" href="#question11">
+                    Git Clone
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                        
+                            a) Subir a repositorio  
+                        <br><br>
+                        <li class="punto">git remote rm origin   </li>
+                        <li class="punto">git remote rm upstream </li>
+                        <li class="punto">git remote add origin https://github.com/matiasercolani/GitHub-Comandos.git</li>
+                        <li class="punto">git push -u origin master  </li>
+
+                        b) Clonar un repositorio desde GitHub
+                        <li class="punto">git clone https://github.com/matiasercolani/GitHub-Comandos.git   </li>
+                        <li class="punto">git push origin master </li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+            <div class="accordion-item" id="question12">
+                <a class="accordion-link" href="#question12">
+                    Git pull
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                            a) Si se crea un archivo desde github con estos comandos se pueden actualizar y agregarse en el repo local 
+                        <br><br>
+                        <li class="punto">git pull<span class="comentario">descarga</span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question13">
+                <a class="accordion-link" href="#question13">
+                    Forks
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                            a) En la pagina de github entrar al repo que se quiere copiar y Presionar boton "FORK" y se creara una copia en mi pagina de github
+                        <br><br>
+                        <li class="punto">git clone https://github.com/matiasercolani/GitHub-Comandos.git<span class="comentario">para tener una copia local</span></li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question14">
+                <a class="accordion-link" href="#question14">
+                    Pull request
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                            a) Sirve para colaborar con otras cuentas y hacer modificaciones/comentarios para que lo modifique el otro usuario
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+
+
+            <div class="accordion-item" id="question15">
+                <a class="accordion-link" href="#question15">
+                    Subida de arhivos
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+
+                        <li class="punto">git remote rm origin </li>
+                        <li class="punto">git remote rm upstream </li>
+                        <li class="punto">git remote add origin https://github.com/matiasercolani/GitHub-Comandos.git </li>
+                        <li class="punto">git push -u origin master </li>
+                        </ul>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item" id="question16">
+                <a class="accordion-link" href="#question16">
+                    **Extra
+                    <ion-icon name="add-outline" class="add"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove"></ion-icon>
+                </a>
+                <div class="answer">
+                    
+                        <ul class="lista">
+                            a) vin Es el editor de código de git desde la consola, ahí escribes un comentario para la nueva versión que estés versionando (si no te deja escribir presiona a letra i). Cuando termines presiona esc y luego :wq (write & quit)pasa salir.
+                            <br><br>
+                            b) .gitignore Es un archivo reservado de git que tenemos que crear si queremos decirle a git los archivos que no vamos a utilizar y así decida ignorarlos.
+                            Escribe dentro de el archivo .gitignore los nombres de los archivos que desees ignorar.
+                            Nota: Las carpetas se escriben solas y los archivos con su terminación.
+                        </ul>
+                    
+                </div>
+            </div>
 
         </div>
     </section>
